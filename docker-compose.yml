@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  ubuntu_16_10:
+    container_name: ubuntu_ssh_client_16_10
+    build:
+      context: ./16.10
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    command: /bin/bash
+    networks:
+      - ssh_network
+
+  ubuntu_18_10:
+    container_name: ubuntu_ssh_client_18_10
+    build:
+      context: ./18.10
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    command: /bin/bash
+    networks:
+      - ssh_network
+
+  ubuntu_20_10:
+    container_name: ubuntu_ssh_client_20_10
+    build:
+      context: ./20.10
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    command: /bin/bash
+    networks:
+      - ssh_network
+
+  ubuntu_22_10:
+    container_name: ubuntu_ssh_server_client_22_10
+    build:
+      context: ./22.10
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "2222:22"
+    command: /usr/sbin/sshd -D
+    networks:
+      - ssh_network
+
+networks:
+  ssh_network:
+    driver: bridge
