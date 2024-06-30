@@ -1,0 +1,3 @@
+[submodule "fatt"]
+	path = fatt
+	url = https://github.com/kauedg/fatt
