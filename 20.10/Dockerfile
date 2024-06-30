@@ -8,9 +8,9 @@ RUN echo 'deb http://old-releases.ubuntu.com/ubuntu groovy main multiverse restr
     echo 'deb http://old-releases.ubuntu.com/ubuntu groovy-security main multiverse restricted universe' >> /etc/apt/sources.list && \
     echo 'deb http://old-releases.ubuntu.com/ubuntu groovy-updates main multiverse restricted universe' >> /etc/apt/sources.list
 
-# Actualiza la lista de paquetes e instala el cliente OpenSSH
+# Actualiza la lista de paquetes e instala el cliente OpenSSH y tcpdump
 RUN apt-get update && \
-    apt-get install -y openssh-client && \
+    apt-get install -y openssh-client tcpdump vim autoconf libssl-dev zlib1g-dev gcc make git && \
     apt-get clean
 
 # Configuración de un directorio de trabajo

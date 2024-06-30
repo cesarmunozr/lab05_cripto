@@ -8,7 +8,7 @@ RUN echo 'deb http://old-releases.ubuntu.com/ubuntu yakkety main multiverse rest
     echo 'deb http://old-releases.ubuntu.com/ubuntu yakkety-security main multiverse restricted universe' >> /etc/apt/sources.list && \
     echo 'deb http://old-releases.ubuntu.com/ubuntu yakkety-updates main multiverse restricted universe' >> /etc/apt/sources.list
 
-# Actualiza la lista de paquetes e instala el cliente OpenSSH
+# Actualiza la lista de paquetes e instala los paquetes necesarios
 RUN apt-get update && \
     apt-get install -y openssh-client && \
     apt-get clean

@@ -8,9 +8,9 @@ RUN echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic main multiverse restr
     echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic-security main multiverse restricted universe' >> /etc/apt/sources.list && \
     echo 'deb http://old-releases.ubuntu.com/ubuntu cosmic-updates main multiverse restricted universe' >> /etc/apt/sources.list
 
-# Actualiza la lista de paquetes e instala el cliente OpenSSH
+# Actualiza la lista de paquetes e instala el cliente OpenSSH y tcpdump
 RUN apt-get update && \
-    apt-get install -y openssh-client && \
+    apt-get install -y openssh-client tcpdump && \
     apt-get clean
 
 # Configuración de un directorio de trabajo
