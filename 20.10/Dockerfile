@@ -10,7 +10,7 @@ RUN echo 'deb http://old-releases.ubuntu.com/ubuntu groovy main multiverse restr
 
 # Actualiza la lista de paquetes e instala el cliente OpenSSH y tcpdump
 RUN apt-get update && \
-    apt-get install -y openssh-client tcpdump vim autoconf libssl-dev zlib1g-dev gcc make git && \
+    apt-get install -y openssh-client tcpdump && \
     apt-get clean
 
 # Configuración de un directorio de trabajo
